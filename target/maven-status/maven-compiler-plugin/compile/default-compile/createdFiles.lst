@@ -1,0 +1,5 @@
+com\example\milestone\MilestoneApplication.class
+com\example\milestone\services\TaskService.class
+com\example\milestone\repositories\TaskRepository.class
+com\example\milestone\controllers\TaskController.class
+com\example\milestone\models\TaskModel.class
