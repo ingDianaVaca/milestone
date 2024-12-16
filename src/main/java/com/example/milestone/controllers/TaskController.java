@@ -2,7 +2,6 @@ package com.example.milestone.controllers;
 
 import com.example.milestone.models.TaskModel;
 import com.example.milestone.services.TaskService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -17,8 +16,11 @@ import java.util.Optional;
 @Validated
 public class TaskController {
 
-    @Autowired
-    private TaskService taskService;
+    private final TaskService taskService;
+
+    public TaskController(TaskService taskService) {
+        this.taskService = taskService;
+    }
 
     @GetMapping
     public List<TaskModel> getAllTasks() {
