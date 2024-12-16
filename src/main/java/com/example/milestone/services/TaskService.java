@@ -26,14 +26,14 @@ public class TaskService {
         return taskRepository.save(task);
     }
 
-//    public TaskModel updateTask(Long id, TaskModel task) {
-//        if (taskRepository.existsById(id)) {
-//            task.setId(id);
-//            return taskRepository.save(task);
-//        } else {
-//            return null;
-//        }
-//    }
+    public TaskModel updateTask(Long id, TaskModel task) {
+        if (taskRepository.existsById(id)) {
+            task.setId(id);
+            return taskRepository.save(task);
+        } else {
+            return null;
+        }
+    }
 
     public boolean deleteTask(Long id) {
         if (taskRepository.existsById(id)) {

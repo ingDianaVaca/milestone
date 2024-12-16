@@ -38,12 +38,12 @@ public class TaskController {
         return new ResponseEntity<>(createdTask, HttpStatus.CREATED);
     }
 
-//    @PutMapping("/{id}")
-//    public ResponseEntity<TaskModel> updateTask(@PathVariable Long id, @Valid @RequestBody TaskModel task) {
-//        TaskModel updatedTask = taskService.updateTask(id, task);
-//        return updatedTask != null ? ResponseEntity.ok(updatedTask)
-//                : ResponseEntity.notFound().build();
-//    }
+    @PutMapping("/{id}")
+    public ResponseEntity<TaskModel> updateTask(@PathVariable Long id, @Valid @RequestBody TaskModel task) {
+        TaskModel updatedTask = taskService.updateTask(id, task);
+        return updatedTask != null ? ResponseEntity.ok(updatedTask)
+                : ResponseEntity.notFound().build();
+    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteTask(@PathVariable Long id) {
